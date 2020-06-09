@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "300297543601",
+    "firebase_url": "https://sec-english-9f7bb.firebaseio.com",
+    "project_id": "sec-english-9f7bb",
+    "storage_bucket": "sec-english-9f7bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:300297543601:android:c8fbd1776de52fe3a36790",
+        "android_client_info": {
+          "package_name": "com.seckill.english"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "300297543601-kr2t52a8b52q2593gfla9obathk4hlip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.seckill.english",
+            "certificate_hash": "5497dfe60fa4b0eb65bdf59bf8e51a5c2a17955f"
+          }
+        },
+        {
+          "client_id": "300297543601-0mivc1fl6l9dig5j9cb0e2le8agnvve5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdX16yFdEuh4yMFO_0nqbQCB-Iz_a-Vk4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "300297543601-0mivc1fl6l9dig5j9cb0e2le8agnvve5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
