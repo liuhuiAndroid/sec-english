@@ -1,6 +1,8 @@
 package com.seckill.english.service
 
+import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
+import com.google.firebase.messaging.RemoteMessage
 
 /**
  * Firebase 云消息传递服务
@@ -19,5 +21,10 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // manage this apps subscriptions on the server side, send the
         // Instance ID token to your app server.
         // sendRegistrationToServer(token)
+        Log.d("MessagingService", "onNewToken：$token")
+    }
+
+    override fun onMessageReceived(p0: RemoteMessage) {
+        super.onMessageReceived(p0)
     }
 }
