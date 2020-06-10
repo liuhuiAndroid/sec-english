@@ -24,6 +24,10 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         Log.d("MessagingService", "onNewToken：$token")
     }
 
+    /**
+     * 应用处于前台可以收到onMessageReceived回调
+     * 应用处于后台可以收到通知
+     */
     override fun onMessageReceived(p0: RemoteMessage) {
         super.onMessageReceived(p0)
     }
