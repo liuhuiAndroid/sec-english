@@ -8,6 +8,8 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 import com.hyphenate.chat.EMClient
 import com.hyphenate.chat.EMOptions
+import com.hyphenate.push.EMPushConfig
+import com.seckill.english.utilities.Constants
 
 class EnglishApplication : Application() {
 
@@ -29,6 +31,11 @@ class EnglishApplication : Application() {
             autoTransferMessageAttachments = true
             // 是否自动下载附件类消息的缩略图等，默认为 true 这里和上边这个参数相关联
             setAutoDownloadThumbnail(true)
+            // 配置推送
+            pushConfig = EMPushConfig.Builder(applicationContext)
+                .enableFCM(Constants.FCM_SENDER_ID).build()
+            // 设置允许使用FCM推送
+            isUseFCM = true
         }
         // 初始化
         EMClient.getInstance().init(applicationContext, options)

@@ -79,4 +79,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:20.2.0'
     // 环信SDK，不包含音视频通话
     implementation 'com.hyphenate:hyphenate-sdk-lite:3.6.8'
+    // 用于检查设备是否支持Google FCM推送
+    implementation 'com.google.android.gms:play-services-base:17.3.0'
 }
