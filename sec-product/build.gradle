@@ -35,13 +35,4 @@ dependencies {
     // arouter
     implementation "com.alibaba:arouter-api:$arouter_api_version"
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
-    // Firebase
-    api 'com.google.firebase:firebase-core:17.4.3'
-    api 'com.google.firebase:firebase-analytics:17.4.3'
-    // Firebase 云消息传递
-    api 'com.google.firebase:firebase-messaging:20.2.0'
-    // 环信SDK，不包含音视频通话
-    api 'com.hyphenate:hyphenate-sdk-lite:3.6.8'
-    // 用于检查设备是否支持Google FCM推送
-    api 'com.google.android.gms:play-services-base:17.3.0'
 }

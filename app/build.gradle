@@ -105,11 +105,14 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // 公共模块
     implementation project(':sec-common')
+    // 商品模块
+    implementation project(':sec-product')
+    // 用户模块
+    implementation project(':sec-user')
+    // 推送模块
     implementation project(':sec-push')
-
     // arouter
     implementation "com.alibaba:arouter-api:$arouter_api_version"
     kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"

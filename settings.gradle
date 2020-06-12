@@ -1,3 +1,5 @@
+include ':sec-user'
+include ':sec-product'
 include ':sec-common'
 include ':sec-push'
 include ':app'

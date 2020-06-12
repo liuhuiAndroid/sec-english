@@ -21,7 +21,9 @@ class SplashActivity : BaseActivity() {
             withContext(Dispatchers.IO){
                 delay(2000)
             }
-            ARouter.getInstance().build(RoutePath.PATH_PUSH_EASEMOB).navigation()
+
+//            ARouter.getInstance().build(RoutePath.PATH_PUSH_EASEMOB).navigation()
+            ARouter.getInstance().build(RoutePath.PATH_PRODUCT_LIST).navigation()
             finish()
         }
     }
