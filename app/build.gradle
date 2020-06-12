@@ -1,8 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-// Firebase
-apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 29
@@ -81,4 +79,9 @@ dependencies {
     implementation 'com.hyphenate:hyphenate-sdk-lite:3.6.8'
     // 用于检查设备是否支持Google FCM推送
     implementation 'com.google.android.gms:play-services-base:17.3.0'
+    
+    implementation 'org.permissionsdispatcher:permissionsdispatcher-ktx:1.0.0-alpha2'
 }
+
+// Firebase
+apply plugin: 'com.google.gms.google-services'

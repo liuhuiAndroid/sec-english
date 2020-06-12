@@ -3,6 +3,7 @@ package com.seckill.english.service
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import com.hyphenate.chat.EMClient
 
 /**
  * Firebase 云消息传递服务
@@ -22,6 +23,9 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         // Instance ID token to your app server.
         // sendRegistrationToServer(token)
         Log.d("MessagingService", "onNewToken：$token")
+        // Important, send the fcm token to the server
+        // 检索EMPushHelper查看下fcm token是否上传成功
+        EMClient.getInstance().sendFCMTokenToServer(token)
     }
 
     /**

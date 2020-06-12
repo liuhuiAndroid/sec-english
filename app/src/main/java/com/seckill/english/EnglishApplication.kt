@@ -36,6 +36,8 @@ class EnglishApplication : Application() {
                 .enableFCM(Constants.FCM_SENDER_ID).build()
             // 设置允许使用FCM推送
             isUseFCM = true
+            // 设置FCM number
+            fcmNumber = Constants.FCM_SENDER_ID
         }
         // 初始化
         EMClient.getInstance().init(applicationContext, options)
