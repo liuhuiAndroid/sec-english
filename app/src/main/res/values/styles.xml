@@ -1,10 +1,28 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <!-- 状态栏背景色 -->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- 许多控件在选中状态或获取焦点状态下使用这个颜色 -->
         <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="android:textAllCaps">false</item>
+        <item name="android:windowBackground">@color/colorBlank</item>
+        <item name="android:statusBarColor">@color/colorToolbar</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="M">true</item>
+        <item name="android:navigationBarColor">@color/colorBlank</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="O_MR1">true</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme" />
+
+    <style name="SplashTheme" parent="BaseAppTheme">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
 </resources>

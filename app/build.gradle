@@ -1,18 +1,24 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
 
     defaultConfig {
-        applicationId "com.seckill.english"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
+        applicationId application_id
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+        versionCode version_code
+        versionName version_name
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -104,9 +110,9 @@ dependencies {
     implementation project(':sec-common')
     implementation project(':sec-push')
 
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    // arouter
+    implementation "com.alibaba:arouter-api:$arouter_api_version"
+    kapt "com.alibaba:arouter-compiler:$arouter_compiler_version"
 }
 
 // Firebase

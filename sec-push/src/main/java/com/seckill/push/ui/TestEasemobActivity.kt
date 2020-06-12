@@ -4,6 +4,7 @@ import android.Manifest
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.iid.FirebaseInstanceId
 import com.hyphenate.EMCallBack
@@ -12,6 +13,7 @@ import com.hyphenate.chat.EMClient
 import com.hyphenate.chat.EMMessage
 import com.seckill.common.base.BaseActivity
 import com.seckill.common.ext.toast
+import com.seckill.common.utilities.RoutePath
 import com.seckill.push.R
 import kotlinx.android.synthetic.main.activity_test_easemob.*
 import org.json.JSONException
@@ -19,6 +21,7 @@ import org.json.JSONObject
 import permissions.dispatcher.PermissionRequest
 import permissions.dispatcher.ktx.withPermissionsCheck
 
+@Route(path = RoutePath.PATH_PUSH_EASEMOB)
 class TestEasemobActivity : BaseActivity() {
 
     private var TAG: String = "TestEasemobActivity"

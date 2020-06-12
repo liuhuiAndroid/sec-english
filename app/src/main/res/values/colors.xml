@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#ED1C24</color>
+    <color name="colorPrimaryDark">#FAFBFC</color>
+    <color name="colorAccent">#ED1C24</color>
+
+    <!--Theme color-->
+    <color name="colorBlank">#F7F8FA</color>
+    <!--Toolbar color-->
+    <color name="colorToolbar">#FAFBFC</color>
+    <!--Label color-->
+    <color name="colorLabel">#0076FF</color>
+    <!--Text color-->
+    <color name="colorTextMain">#333333</color>
+    <color name="colorTextMid">#666666</color>
+    <color name="colorTextLight">#999999</color>
+    <color name="colorTextWeak">#B2B2B2</color>
+    <!--Divider color-->
+    <color name="colorDivider">#EEEEEE</color>
+
+    <!--detail verify-->
+    <color name="colorDetailVerify">#0054A6</color>
+    <color name="colorBgNewEstateConsult">#001326</color>
+
+    <!--bg color-->
+    <color name="colorBgNewEstateNotice">#FEF3F4</color>
+
+    <!--Address color-->
+    <color name="colorAddress">#4D73BF</color>
+    <!--Mask color-->
+    <color name="colorMask">#20000000</color>
+    <color name="colorCancel">#EEEEEE</color>
+    <color name="colorPropertyStatus">#8C292630</color>
+    <color name="browser_actions_text_color">#8C292630</color>
 </resources>
