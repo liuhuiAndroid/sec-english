@@ -4,7 +4,7 @@ import android.app.Application
 import com.hyphenate.chat.EMClient
 import com.hyphenate.chat.EMOptions
 import com.hyphenate.push.EMPushConfig
-import com.seckill.english.utilities.Constants
+import com.seckill.common.utilities.Constants
 
 class EnglishApplication : Application() {
 

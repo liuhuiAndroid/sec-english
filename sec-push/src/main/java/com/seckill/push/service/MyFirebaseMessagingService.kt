@@ -1,4 +1,4 @@
-package com.seckill.english.service
+package com.seckill.push.service
 
 import android.util.Log
 import com.google.firebase.messaging.FirebaseMessagingService

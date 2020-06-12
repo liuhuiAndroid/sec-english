@@ -43,15 +43,16 @@
    ```groovy
    // 更改apk打包后的名称
    android.applicationVariants.all { variant ->
-       variant.outputs.all {
-           // 默认生成到app目录下，修改路径到app/build/apk下
-           def dir = new File(project.buildDir.absolutePath + "/apk")
-           variant.getPackageApplicationProvider().get().outputDirectory = dir
-           def date = new Date().format("yyyyMMdd_HH-mm", TimeZone.getTimeZone("GMT+08"))
-           def variantName = variant.name.replace('Release', '')
-           outputFileName = "app-${variantName}-${variant.versionName}-${date}.apk"
+       // 不加这个判断，debug运行会找不到文件
+       if (variant.buildType.name == 'release') {
+           variant.outputs.all {
+               // 默认生成到app目录下，修改路径到app/build/apk下
+               def dir = new File(project.buildDir.absolutePath + "/apk")
+               variant.getPackageApplicationProvider().get().outputDirectory = dir
+               def date = new Date().format("yyyyMMdd_HH-mm", TimeZone.getTimeZone("GMT+08"))
+               def variantName = variant.name.replace('Release', '')
+               outputFileName = "app-${variantName}-${variant.versionName}-${date}.apk"
+           }
        }
    }
-```
-   
-   
+   ```

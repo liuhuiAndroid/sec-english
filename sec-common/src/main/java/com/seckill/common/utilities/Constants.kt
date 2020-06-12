@@ -1,4 +1,4 @@
-package com.seckill.english.utilities
+package com.seckill.common.utilities
 
 object Constants {
 

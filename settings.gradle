@@ -1,2 +1,4 @@
+include ':sec-common'
+include ':sec-push'
 include ':app'
 rootProject.name = "sec-english"
