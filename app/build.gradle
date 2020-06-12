@@ -33,17 +33,65 @@ android {
     }
 
     buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    // 风味维度
+    flavorDimensions 'environment'
+
+    // 产品风味
+    productFlavors {
+        alpha {
+            dimension 'environment'
+            // 区分环境：测试环境地址
+            buildConfigField 'String', 'BASE_URL', "\"http://localhost.alpha:8080/\""
+            manifestPlaceholders = [
+                    app_name: "秒英语-α"
+            ]
+        }
+        beta {
+            dimension 'environment'
+            // 区分环境：开发环境地址
+            buildConfigField 'String', 'BASE_URL', "\"http://localhost.beta:8080/\""
+            manifestPlaceholders = [
+                    app_name: "秒英语-β"
+            ]
+        }
+    }
+
+    // 更改apk打包后的名称
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            // 默认生成到app目录下，修改路径到app/build/apk下
+            def dir = new File(project.buildDir.absolutePath + "/apk")
+            variant.getPackageApplicationProvider().get().outputDirectory = dir
+            def date = new Date().format("yyyyMMdd_HH-mm", TimeZone.getTimeZone("GMT+08"))
+            def variantName = variant.name.replace('Release', '')
+            outputFileName = "app-${variantName}-${variant.versionName}-${date}.apk"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
     }
 }
 
@@ -79,7 +127,7 @@ dependencies {
     implementation 'com.hyphenate:hyphenate-sdk-lite:3.6.8'
     // 用于检查设备是否支持Google FCM推送
     implementation 'com.google.android.gms:play-services-base:17.3.0'
-    
+
     implementation 'org.permissionsdispatcher:permissionsdispatcher-ktx:1.0.0-alpha2'
 }
 
