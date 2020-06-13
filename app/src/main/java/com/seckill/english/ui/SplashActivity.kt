@@ -16,6 +16,7 @@ class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_splash)
 
         lifecycleScope.launch {
             withContext(Dispatchers.IO){
@@ -23,8 +24,8 @@ class SplashActivity : BaseActivity() {
             }
 
 //            ARouter.getInstance().build(RoutePath.PATH_PUSH_EASEMOB).navigation()
-            ARouter.getInstance().build(RoutePath.PATH_PRODUCT_LIST).navigation()
-            finish()
+//            ARouter.getInstance().build(RoutePath.PATH_PRODUCT_LIST).navigation()
+//            finish()
         }
     }
 
