@@ -2,7 +2,12 @@
     package="com.seckill.product">
 
     <application>
-        <activity android:name=".ProductListActivity"
-            android:theme="@style/ProductTheme"/>
+        <activity
+            android:name=".ProductListActivity"
+            android:theme="@style/ProductTheme" />
+
+        <activity
+            android:name=".ui.ProductDetailActivity"
+            android:theme="@style/ProductTheme" />
     </application>
 </manifest>

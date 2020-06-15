@@ -1,19 +1,20 @@
-package com.seckill.product
+package com.seckill.product.ui
 
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.seckill.common.base.BaseActivity
 import com.seckill.common.utilities.RoutePath
+import com.seckill.product.R
 
 /**
- * 商品列表页面
+ * 商品详情页面
  */
-@Route(path = RoutePath.PATH_PRODUCT_LIST)
-class ProductListActivity : BaseActivity() {
+@Route(path = RoutePath.PATH_PRODUCT_DETAIL)
+class ProductDetailActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_product_list)
+        setContentView(R.layout.activity_product_detail)
     }
 
 }

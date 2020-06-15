@@ -9,4 +9,6 @@ object RoutePath {
 
     // 商品列表页面
     const val PATH_PRODUCT_LIST = "/product/list"
+    // 商品详情页面
+    const val PATH_PRODUCT_DETAIL = "/product/detail"
 }
