@@ -25,8 +25,8 @@ class SplashActivity : BaseActivity() {
 
 //            ARouter.getInstance().build(RoutePath.PATH_PUSH_EASEMOB).navigation()
 //            ARouter.getInstance().build(RoutePath.PATH_PRODUCT_LIST).navigation()
-            ARouter.getInstance().build(RoutePath.PATH_PRODUCT_DETAIL).navigation()
-            finish()
+//            ARouter.getInstance().build(RoutePath.PATH_PRODUCT_DETAIL).navigation()
+//            finish()
         }
     }
 

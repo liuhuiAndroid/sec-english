@@ -16,7 +16,7 @@ import kotlin.math.sin
  */
 class PieChartView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
-    // 反锯齿，一般都要设置，否则会有毛边
+    // 抗锯齿标志，一般都要设置，否则会有毛边
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     // 矩形

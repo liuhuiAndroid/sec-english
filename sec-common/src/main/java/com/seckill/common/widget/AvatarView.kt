@@ -16,7 +16,7 @@ class AvatarView(context: Context?, attrs: AttributeSet?) : View(context, attrs)
     private val PADDING: Float = ConvertUtils.dp2px(50F)
     private val EDGE_WIDTH: Float = ConvertUtils.dp2px(5F)
 
-    // 反锯齿，一般都要设置，否则会有毛边
+    // 抗锯齿标志，一般都要设置，否则会有毛边
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     // 图形叠加效果
