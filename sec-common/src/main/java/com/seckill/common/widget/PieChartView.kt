@@ -23,7 +23,7 @@ class PieChartView(context: Context?, attrs: AttributeSet?) : View(context, attr
     private val bounds = RectF()
 
     // 饼图半径
-    private val redius = 200F
+    private val radius = 200F
 
     // 角度
     private val angles = intArrayOf(60, 100, 120, 80)
@@ -40,13 +40,16 @@ class PieChartView(context: Context?, attrs: AttributeSet?) : View(context, attr
         Color.parseColor("#999999"), Color.parseColor("#00FA00")
     )
 
+    /**
+     * 在视图的大小发生改变时调用该方法
+     */
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         bounds.set(
-            (width / 2) - redius,
-            (height / 2) - redius,
-            (width / 2) + redius,
-            (height / 2) + redius
+            (width / 2) - radius,
+            (height / 2) - radius,
+            (width / 2) + radius,
+            (height / 2) + radius
         )
     }
 
@@ -55,6 +58,7 @@ class PieChartView(context: Context?, attrs: AttributeSet?) : View(context, attr
         var currentAngle = 0F
         angles.forEachIndexed { index, value ->
             paint.color = colors[index]
+            // save():保存当前的绘图状态
             canvas?.save()
             if (index == pulledOutIndex) {
                 canvas?.translate(
@@ -66,6 +70,7 @@ class PieChartView(context: Context?, attrs: AttributeSet?) : View(context, attr
                 bounds, currentAngle,
                 value.toFloat(), true, paint
             )
+            // restore():恢复之前保存的绘图状态
             canvas?.restore()
             currentAngle += value
         }

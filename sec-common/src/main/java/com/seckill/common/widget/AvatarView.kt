@@ -12,9 +12,12 @@ import com.seckill.common.utilities.ConvertUtils
  */
 class AvatarView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
-    private val WIDTH: Float = ConvertUtils.dp2px(200F)
-    private val PADDING: Float = ConvertUtils.dp2px(50F)
-    private val EDGE_WIDTH: Float = ConvertUtils.dp2px(5F)
+    // Bitmap 宽度
+    private val width: Float = ConvertUtils.dp2px(200F)
+
+    private val padding: Float = ConvertUtils.dp2px(50F)
+
+    private val edgeWidth: Float = ConvertUtils.dp2px(5F)
 
     // 抗锯齿标志，一般都要设置，否则会有毛边
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -25,34 +28,41 @@ class AvatarView(context: Context?, attrs: AttributeSet?) : View(context, attrs)
     private var savedArea = RectF()
 
     init {
-        bitmap = getAvatar(WIDTH.toInt())
+        bitmap = getAvatar(width.toInt())
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        savedArea.set(PADDING, PADDING, PADDING + WIDTH, PADDING + WIDTH)
+        savedArea.set(padding, padding, padding + width, padding + width)
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?.let {
-            canvas.drawOval(PADDING, PADDING, PADDING + WIDTH, PADDING + WIDTH, paint)
-            // 离屏缓冲
+            canvas.drawOval(padding, padding, padding + width, padding + width, paint)
+            // canvas.saveLayer() 把绘制区域拉到单独的离屏缓冲里
             val saved = canvas.saveLayer(savedArea, paint)
+            // 绘制 A 图形
             canvas.drawOval(
-                PADDING + EDGE_WIDTH,
-                PADDING + EDGE_WIDTH,
-                PADDING + WIDTH - EDGE_WIDTH,
-                PADDING + WIDTH - EDGE_WIDTH,
+                padding + edgeWidth,
+                padding + edgeWidth,
+                padding + width - edgeWidth,
+                padding + width - edgeWidth,
                 paint
             )
+            // 设置 xfermode
             paint.xfermode = xfermode
-            canvas.drawBitmap(bitmap, PADDING, PADDING, paint)
+            // 绘制 B 图形
+            canvas.drawBitmap(bitmap, padding, padding, paint)
+            // 恢复 xfermode
             paint.xfermode = null
             canvas.restoreToCount(saved)
         }
     }
 
+    /**
+     * 获取 Bitmap 对象
+     */
     private fun getAvatar(width: Int): Bitmap {
         val options = BitmapFactory.Options()
         options.inJustDecodeBounds = true
